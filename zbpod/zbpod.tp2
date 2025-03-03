@@ -23,6 +23,14 @@ LANGUAGE  ~English~
           ~zbpod/lang/english/JournalEntries.tra~
           ~zbpod/lang/english/cutscenes.tra~
 
+LANGUAGE  ~Simplified Chinese By Lzw104522773~
+          ~schinese~
+          ~zbpod/lang/schinese/game.tra~
+          ~zbpod/lang/schinese/weidu.tra~
+          ~zbpod/lang/schinese/dialogs.tra~
+          ~zbpod/lang/schinese/JournalEntries.tra~
+          ~zbpod/lang/schinese/cutscenes.tra~
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 BEGIN @20001 DESIGNATED 2 LABEL ~zb_pod_ee~ // INSTALL PIT OF DESPAIR FOR ENHANCED EDITION
