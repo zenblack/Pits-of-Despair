@@ -1,0 +1,47 @@
+// nephetel
+
+/// Creature files ///
+// SoA
+COPY ~%MOD_FOLDER%/nephetel/zspdnf16.cre~ ~override~
+  SAY 0x08 @15001
+  SAY 0x0c @15001
+  WRITE_ASCII PORTRAIT_LARGE ~zdnephy~ #8
+  WRITE_ASCII PORTRAIT_SMALL ~zdnephy~ #8
+  WRITE_ASCII SCRIPT_OVERRIDE ~ZSPDNFS~ #8
+  WRITE_ASCII DEATHVAR ~ZSPDNF16~ #32
+  WRITE_ASCII DIALOG ~ZBNEPH~ #8
+
+// ToB
+COPY_EXISTING ~zspdnf16.cre~ ~override/ZDBAE25.CRE~
+  WRITE_ASCII SCRIPT_OVERRIDE ~ZSPDNFS~ #8
+  WRITE_ASCII DEATHVAR ~ZSPDNF16~ #32
+  WRITE_ASCII DIALOG ~ZBNEPH~ #8
+
+/// Dialog ///
+// Compile dialog
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/zbneph.d~
+
+// Scripts
+// COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/baf/zdbaes.baf~
+// COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/baf/zdbae25s.baf~
+// COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/baf/zdbaed.baf~
+// COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/baf/zdbae25d.baf~
+// COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/baf/zbcutrel.baf~
+
+
+// Appending dialog files
+// See [here](https://www.gibberlings3.net/forums/topic/15833-dialog-files-and-how-they-are-referenced/)
+// cre post_dialog_file join_dialog_file dream_script_file 25post_dialog_file 25join_dialog_file 25dream_script_file 25override_script_file
+// APPEND ~pdialog.2da~
+//   ~zdbae zdbaep zdbaej zdbaed zdbae25p zdbae25j zdbae25d zdbae25~
+// UNLESS ~zdbae~
+
+// // Banter
+// // cre FILE 25FILE
+// APPEND ~interdia.2da~
+//   ~zdbae zdbaeb zdbae25b~
+// UNLESS ~zdbae~
+
+// // Epilogue
+// COPY ~%MOD_FOLDER%/epilogue/zdbae.2da~ ~override/zdbae01.2da~
+// REPLACE ~99999~ @60

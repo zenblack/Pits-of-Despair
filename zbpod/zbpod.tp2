@@ -198,12 +198,14 @@ APPEND ~ITEMDIAL.2da~
 ~zbeshpeu %label% zbeshpeu~
 UNLESS ~zbeshpeu~
 
+// Nephetel
+INCLUDE ~%MOD_FOLDER%/lib/nephetel.tpa~
+
 COMPILE ~%MOD_FOLDER%/test/zbeshpeu.d~ /* esphel dialogues */
 		~%MOD_FOLDER%/test/zbvyan.d~ /* vyantri's new line */
 		~%MOD_FOLDER%/test/zbmes.d~ /* messenger - aka best girl in disguise lines */
 		~%MOD_FOLDER%/test/zbvci.d~ /* vanilla npc interjections */
 		~%MOD_FOLDER%/test/gaelan.d~ /* add a line to gaelan */
-		~%MOD_FOLDER%/test/zbneph.d~ /* nephetel's base dialogue file */
 		~%MOD_FOLDER%/test/crossmod.d~ /* crossmod - for now only BGinBG1 */
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
