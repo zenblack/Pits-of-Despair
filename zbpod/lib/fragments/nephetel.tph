@@ -1,0 +1,123 @@
+// nephetel
+
+/// Creature files ///
+// SoA
+COPY ~%MOD_FOLDER%/nephetel/zspdnf16.cre~ ~override~
+  SAY 0x08 @15001
+  SAY 0x0c @15001
+  WRITE_ASCII PORTRAIT_LARGE ~zdbael~ #8
+  WRITE_ASCII PORTRAIT_SMALL ~zdbaem~ #8
+  WRITE_ASCII SCRIPT_OVERRIDE ~ZSPDNFS~ #8
+  WRITE_ASCII DEATHVAR ~ZSPDNF16~ #32
+  WRITE_ASCII DIALOG ~ZBNEPH~ #8
+
+// ToB
+COPY ~%MOD_FOLDER%/cre/zdbae.cre~ ~override/ZDBAE25.CRE~
+  SAY NAME1 @99
+  SAY NAME2 @99
+  SAY BIO @100
+  SAY BATTLE_CRY1 @1
+  SAY BATTLE_CRY2 @14
+  SAY BATTLE_CRY3 @15
+  SAY BATTLE_CRY4 @16
+  SAY BATTLE_CRY5 @17
+  SAY LEADER @2
+  SAY TIRED @3
+  SAY BORED @4
+  SAY HURT @5
+  SAY DAMAGE @12
+  SAY DYING @13
+  SAY MORALE @18
+  SAY HAPPY @19
+  SAY UNHAPPY_ANNOYED @20
+  SAY UNHAPPY_SERIOUS @21
+  SAY UNHAPPY_BREAKING @22
+  SAY SELECT_COMMON1 @6
+  SAY SELECT_COMMON2 @7
+  SAY SELECT_COMMON3 @8
+  SAY SELECT_COMMON4 @23
+  SAY SELECT_COMMON5 @24
+  SAY SELECT_COMMON6 @25
+  SAY SELECT_ACTION1 @9
+  SAY SELECT_ACTION2 @10
+  SAY SELECT_ACTION3 @11
+  SAY SELECT_ACTION4 @26
+  SAY SELECT_ACTION5 @27
+  SAY SELECT_ACTION6 @28
+  SAY REACT_TO_DIE_GENERAL @29
+  SAY REACT_TO_DIE_SPECIFIC @30
+  SAY SELECT_RARE1 @31
+  SAY SELECT_RARE2 @32
+  SAY CRITICAL_HIT @33
+  SAY CRITICAL_MISS @34
+  SAY TARGET_IMMUNE @35
+  SAY INVENTORY_FULL @36
+  SAY PICKED_POCKET @37
+  SAY HIDDEN_IN_SHADOWS @38
+  SAY SPELL_DISRUPTED @39
+  SAY SET_A_TRAP @40
+  WRITE_ASCII PORTRAIT_LARGE ~zdbael~ #8
+  WRITE_ASCII PORTRAIT_SMALL ~zdbaem~ #8
+  WRITE_ASCII SCRIPT_OVERRIDE ~zdbae25s~ #8
+  WRITE_ASCII DEATHVAR ~zdbae~ #32
+  WRITE_ASCII DIALOG ~zdbae25~ #8
+  REMOVE_CRE_ITEMS
+  ADD_CRE_ITEM ~CLCK17~ #0 #0 #0 ~identified&stolen~ ~armor~ EQUIP
+  ADD_CRE_ITEM ~STAF18~ #0 #0 #0 ~identified&stolen~ ~weapon1~ EQUIP
+  ADD_CRE_ITEM ~ZDRING~ #0 #0 #0 ~identified&undroppable~ ~rring~ EQUIP
+
+/// Dialog ///
+// Compile dialog
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/nephetel/zbneph.d~
+
+// Scripts
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/baf/zdbaes.baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/baf/zdbae25s.baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/baf/zdbaed.baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/baf/zdbae25d.baf~
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/baf/zbcutrel.baf~
+
+
+// Appending dialog files
+// See [here](https://www.gibberlings3.net/forums/topic/15833-dialog-files-and-how-they-are-referenced/)
+// cre post_dialog_file join_dialog_file dream_script_file 25post_dialog_file 25join_dialog_file 25dream_script_file 25override_script_file
+APPEND ~pdialog.2da~
+  ~zdbae zdbaep zdbaej zdbaed zdbae25p zdbae25j zdbae25d zdbae25~
+UNLESS ~zdbae~
+
+// Banter
+// cre FILE 25FILE
+APPEND ~interdia.2da~
+  ~zdbae zdbaeb zdbae25b~
+UNLESS ~zdbae~
+
+// Epilogue
+COPY ~%MOD_FOLDER%/epilogue/zdbae.2da~ ~override/zdbae01.2da~
+REPLACE ~99999~ @60
+
+// Spawn Baeloth in the Copper Cornet
+EXTEND_TOP ~AR0406.BCS~ ~%MOD_FOLDER%/baf/ar0406.baf~
+  EVALUATE_BUFFER
+
+// Add Baeloth to ToB
+ACTION_IF GAME_IS ~eet~ THEN BEGIN // EET related code & summoning script
+  INCLUDE ~EET/other/EET_functions.tph~ //declaration of external EET functions used below
+  LAF ~EET_NPC_TRANSITION~ //function used to automatically implement EET continuity system
+    INT_VAR
+      type = 3 // NPC with BG1 and BG2 content (full transition to SoA/ToB)
+      default_ToB = 1 // Summonable in ToB
+    STR_VAR
+      dv = "BAELOTH" // Death Variable (script name)
+      override_BG1 = "BAELOTH" // name of the override NPC script in BG1
+      override_SoD = "BAELOTH" // name of the override NPC script in SoD (use BG1 one if doesn't exist)
+      override_SoA = "ZDBAEs" // SoA Override script
+      override_ToB = "ZDBAE25s" // ToB Override script
+      dialog_ToB = "ZDBAE25" // ToB dialogue file
+      cre_ToB = "ZDBAE25"
+      traFile = EVAL "%MOD_FOLDER%/tra/%LANGUAGE%/setup.tra"
+      string = "@5999" // Bring me Baeloth, the drow sorcerer.
+      stringPosDV = "Baeloth" // Baeloth
+  END
+END ELSE BEGIN
+  COMPILE ~%MOD_FOLDER%/fate/fatesp.d~
+END
