@@ -59,6 +59,7 @@ Weight: 5~
 @10013 = ~Tidal Wave: 2 stacks~
 @10014 = ~Unleashed Overwhelming Wave~
 
+@10019 = ~We probably need a unidentified description for double swords (from NWN maybe?)~ // TODO \\
 @10020 = ~Double sword~
 @10021 = ~Golden Gale +4~
 @10022 = ~Double sword general description placeholder
@@ -239,7 +240,12 @@ Equipped abilities:
 Weight: 3~
 
 @10080 = ~Staff of Disruption +1~
-@10081 = ~This staff was created for a very specific purpose: to slay undead. Any such creature hit by it not only feels the sting of the weapon, but also has a chance of being simply blasted from existence. There are legends that speak of a priest so holy a single glancing touch could send a vampire to oblivion, but whether the weapon empowered her or she empowered it is a topic for theologians.
+@10081 = ~A cousin of the more well-known mace of disruption, this ornate staff is the invention of Thulsmine Achenfell, an aspirant necromancer from the Great Dale that sought to raise an undead army from within the Rawlinswood. His ambition proved his folly, however, as his would-be servants proved too unwieldy for him to control. The hoard turned against its master, spreading through the forest and forcing Thulsmine into a shameful retreat.
+
+Embittered by the experience, Thulsmine found his true calling when he began crafting a weapon that could fix his mistake—not out of a desire to right any wrongs, but to simply remove any evidence of his incompetence. With this, the first staff of disruption was born. So effective it was at the eradication of his undead creations that Thulsmine lost himself in the experience—quite literally. His spellbook in tatters and his undead army naught but dust, the wizard wandered the Rawlinswood until his untimely demise, perishing alone in the very woods he had once sought to conquer.
+
+It is unlikely that this staff is the same one that Thulsmine wielded, but it carries his legacy nonetheless. Infused with the same disruptive power, it still hums with the magic he used to undo his creations.
+
 
 STATISTICS:
 
@@ -328,19 +334,71 @@ Rating: ★★★☆☆ (3/5 stars)
 A work of considerable ambition, but ultimately, one that may leave you feeling more exhausted than enlightened.~
 
 @10120 = ~Mirror Mask~
-@10121 = ~Mirror mask description placeholder~
+@10121 = ~Mirror mask description placeholder
+
+Equipped abilities:
+– Immunity to all gaze attacks, such as those from vampires and basilisks
+
+Charge abilities:
+– Mirror Image twice per day
+  Special: Caster causes 5 exact duplicates of themselves to appear around them, as per the Mirror Image spell
+  Duration: 13 rounds
+
+Weight: 4~
 
 @10130 = ~Luxurious Lizardskin Leaps~
-@10131 = ~Luxurious Lizardskin Leaps description placeholder~
+@10131 = ~Luxurious Lizardskin Leaps description placeholder
+
+Equipped abilities:
+– Charisma: +2
+– Fire resistance: +30%
+– Saves vs. Breath: +1
+
+Charge abilities:
+– Misty Step twice per day
+  Special: Teleport to a nearby location instantly
+  Range: 30 ft.
+
+Weight: 4~
 
 @10140 = ~Blazing Bull~
-@10141 = ~Blazing Bull description placeholder~
+@10141 = ~Blazing Bull description placeholder
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Physical damage resistance: +5%
+– Protects against critical hits
+– Gore attack: Once per round, the wearer may gore an enemy for 1d6 piercing plus 2 fire damage. Barbarians inflict double damage with this attack
+
+Weight: 2~
 
 @10150 = ~Gruumsh's Totem~
-@10151 = ~Gruumsh's Totem description placeholder~
+@10151 = ~Among the Ashmaw clan—a powerful but relatively secretive clan of orcs that once lived amongst the Sunset Mountains—the most devout servants of Gruumsh were not allowed to fall into obscurity. Death was seen as merely a threshold, and the greatest of their warriors, shamans, and chieftains were not left to decay in the frozen reaches of their homeland. Instead, their heads were severed in grizzly rituals, dried in the smoke of pinewood fires, and then serenaded in the name of Grummsh.
+
+Fashioned into easily carryable totems by shamanic magic, they were oft brought into battle by the fiercest of the Ashmaw, who sought both the wisdom and fury of their ancestors. Clutching the totem was said to awaken the rage of the dead, flooding the wielder with visions of fury and bloodshed, goading them into a battle frenzy.
+
+The shrunken head that dangles from this beaded leather cord bears the markings of a battle-scarred warrior, a singular preserved eye appearing to watch those that hold it, and his mouth caught in a voracious battle-cry.
+
+STATISTICS:
+
+Charge abilities:
+– Berserker Rage once per day
+  Special: The wielder is enraged as per the Berserker Rage skill. Half-orcs gain an additional +1 bonus to attack damage
+  Area of Effect: Self
+  Duration: 8 rounds
+
+Weight: 2~
 
 @10160 = ~Resplendent Ring~
-@10161 = ~Resplendent Ring description placeholder~
+@10161 = ~Also known as “The Hopeful” these rings are gifts from powerful mages in Thay to their agents in far off lands. As they struggle to accomplish devious and nefarious missions for the Zulkir they serve they would at times become sullen and morose for many reasons. The Zulkir ordered their use when this arose and the agent, whether deep in Zhentarim plots or fighting for their lives in Algarond against berserk Rashamar it would give them hope and courage to press on, often to their own deaths. It is a bad omen to receive these rings which are as often gained bloodily as is the intent of those who wear them.
+
+Equipped abilities:
+– Armor Class: +1
+– Saving Throws: +1
+
+Weight: 0~
 
 @10170 = ~Angelic Horseshoe~
 @10171 = ~Only four of these magnificent golden horseshoe amulets are known to exist.  According to legend, they once belonged to an astral deva who liked to polymorph herself into an equine form such as a pegasus or unicorn when on a mission in the prime material plane, often serving as the mount of a worthy hero.  During one perilous mission the deva's avatar was slain and the grieving heroes kept her horseshoes as a memento and lucky charm.
@@ -348,9 +406,9 @@ A work of considerable ambition, but ultimately, one that may leave you feeling 
 STATISTICS:
 
 Equipped abilities:
-- Charisma: +1
-- Constitution: +1
-- Luck: +1
+– Charisma: +1
+– Constitution: +1
+– Luck: +1
 
 Weight: 3~
 @10172 = ~Horseshoe Amulet~
@@ -359,7 +417,12 @@ Weight: 3~
 @10181 = ~Nine Lives description placeholder~
 
 @10190 = ~Jack of all trades~
-@10191 = ~Jack of all trades description placeholder~
+@10191 = ~This rare and wonderful cloak goes by the name Jack. Originally worn by Dapper Jack he was a peasant who grew up with nothing but an incredible will to become anything and everything. He had heard tales that Elminster, the Sage, had throughout his long life had many professions and many careers before ending up as Mystra's archmage. Dapper Jack went through life learning the finesse of a thief, the style of a fighter, the devotion of a cleric, and the determination of a mage before eventually creating this item at the end years of his own long life. It was said to strike awe into those around him and the experience of his long years woven into its thread and beating with a life all their own.
+
+Equipped abilities:
+– Pending to complete, it's a fairly complicated item!! :)
+
+Weight: 3~
 
 // Imported BG1 Items
 @11000 = ~BG Imported Items~
