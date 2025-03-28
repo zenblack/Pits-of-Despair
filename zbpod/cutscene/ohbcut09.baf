@@ -1,0 +1,118 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ohbdenna")  // Dennaton
+		MoveViewPoint([1360.495],BD_NORMAL)
+		Wait(1)
+		ActionOverride("ohbmerle",FaceObject("ohbimasc"))  // Imascus
+		DisplayStringHead("ohbmerle",94043)  // Imascus, Little John, the time has come! We won't get a better chance than this!
+		SmallWait(4)
+		ActionOverride("ohbimasc",FaceObject("ohbmerle"))  // Merle
+		SmallWait(6)
+		ActionOverride("ohbmerle",EquipRanged())
+		ActionOverride("ohbmerle",FaceObject("ohblittl"))  // Little John
+		SmallWait(2)
+		ActionOverride("ohblittl",FaceObject("ohbmerle"))  // Merle
+		Wait(3)
+		ActionOverride("ohbmerle",MoveToPoint([1395.655]))
+		SmallWait(5)
+		ActionOverride("ohblittl",MoveToPoint([1475.620]))
+		SmallWait(7)
+		Face(SE)
+		SmallWait(7)
+		DisplayStringHead(Myself,94044)  // What in Faerûn are you babbling about?
+		ActionOverride("ohbmerle",FaceObject("ohbdenna"))  // Dennaton
+		ActionOverride("ohblittl",FaceObject("ohbdenna"))  // Dennaton
+		Wait(2)
+		ActionOverride("ohblittl",SetSequence(SEQ_ATTACK_SLASH))
+		DisplayStringHead("ohblittl",94045)  // Your death, tyrant! Now, Imascus, NOW!
+		SmallWait(15)
+		ActionOverride("ohblittl",FaceObject("ohbimasc"))  // Imascus
+		SmallWait(8)
+		ActionOverride("ohbimasc",MoveToPoint([1485.695]))
+		ActionOverride("ohbmerle",Attack("ohbdenna"))  // Dennaton
+		SmallWait(5)
+		ActionOverride("ohblittl",Attack("ohbdenna"))  // Dennaton
+		Wait(1)
+		ReallyForceSpell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)  // SPWI311.SPL (Protection From Normal Missiles)
+		SmallWait(5)
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_DISINTEGRATE))  // Dennaton
+		Wait(4)
+		ReallyForceSpell(Myself,WIZARD_SPELL_TRAP)  // SPWI902.SPL (Spell Trap)
+		Wait(2)
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_FINGER_OF_DEATH))  // Dennaton
+		SmallWait(84)
+		DisplayStringHead("ohbimasc",94046)  // It—it's not working!
+		ActionOverride("ohbmerle",SetSequence(SEQ_READY))
+		ActionOverride("ohblittl",SetSequence(SEQ_READY))
+		ActionOverride("ohbimasc",SetSequence(SEQ_READY))
+		SmallWait(38)
+		DisplayStringHead(Myself,94047)  // Naturally, it won't work! Winged, show yourself!
+		ActionOverride("ohbmerle",SetSequence(SEQ_READY))
+		ActionOverride("ohblittl",SetSequence(SEQ_READY))
+		ActionOverride("ohbimasc",SetSequence(SEQ_READY))
+		Wait(2)
+		ActionOverride("ohblittl",Attack("ohbdenna"))  // Dennaton
+		ActionOverride("ohbmerle",Attack("ohbdenna"))  // Dennaton
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_LOWER_RESISTANCE))  // Dennaton
+		Wait(3)
+		CreateVisualEffect("spdimndr",[1213.390])
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_FLAME_ARROW))  // Dennaton
+		Wait(3)
+		CreateCreatureImpassable("ohbwing",[1230.390],S)  // The Winged
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_MELF_ACID_ARROW))  // Dennaton
+		SmallWait(11)
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_MAGIC_MISSILE))  // Dennaton
+		SmallWait(11)
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_CHROMATIC_ORB))  // Dennaton
+		SmallWait(11)
+		DisplayStringHead("ohbwing",94048)  // This had best be important, Dennaton.
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_LARLOCH_MINOR_DRAIN))  // Dennaton
+		Wait(1)
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_CHARM_PERSON))  // Dennaton
+		Wait(1)
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_MAGIC_MISSILE))  // Dennaton
+		SmallWait(12)
+		DisplayStringHead(Myself,94050)  // It is. Make an example out of these fools. A gruesome one.
+		SmallWait(3)
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_SPOOK))  // Dennaton
+		Wait(1)
+		SmallWait(15)
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_SPELL_STRIKE))  // Dennaton
+		Wait(3)
+		DisplayStringHead("ohbwing",94051)  // As you wish.
+		SmallWait(5)
+		ActionOverride("ohbimasc",ForceSpell("ohbdenna",WIZARD_FINGER_OF_DEATH))  // Dennaton
+		SmallWait(5)
+		ActionOverride("ohbwing",Face(SE))
+		SmallWait(3)
+		ActionOverride("ohbwing",ForceSpellPointRES("jwcomet",[1350.660]))  // No such index
+		SmallWait(14)
+		ActionOverride("ohbmerle",Face(NE))
+		SmallWait(4)
+		ActionOverride("ohbmerle",DisplayStringHead(Myself,94052))  // No, NO! Aiiee!
+		SmallWait(3)
+		ActionOverride("ohbmerle",ReallyForceSpellRES("runrun",Myself))  // No such index
+		ActionOverride("ohblittl",ReallyForceSpellRES("runrun",Myself))  // No such index
+		ActionOverride("ohbmerle",MoveToPoint([1045.720]))
+		ActionOverride("ohblittl",MoveToPoint([1605.855]))
+		SmallWait(12)
+		ActionOverride("ohbwing",ApplyDamagePercent("ohbimasc",150,FIRE))  // Imascus
+		SmallWait(3)
+		ActionOverride("ohbwing",ApplyDamagePercent("ohbmerle",150,FIRE))  // Merle
+		ActionOverride("ohbwing",ApplyDamagePercent("ohblittl",150,FIRE))  // Little John
+		Wait(1)
+		DisplayStringHead("ohbwing",94053)  // I shall expect payment shortly.
+		SmallWait(52)
+		DisplayStringHead(Myself,94054)  // Of course, of course! Now off with you!
+		Wait(3)
+		ActionOverride("ohbwing",ReallyForceSpell(Myself,DRYAD_TELEPORT))  // SPWI995.SPL (Dimension Door)
+		Wait(4)
+		SetGlobal("OHB_EVENT_102","MYAREA",1)
+		SetGlobal("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+		ApplySpell("ohbdenna",RESTORE_FULL_HEALTH)  // Dennaton
+		Wait(1)
+		ActionOverride("ohbdenna",StartDialogueNoSet(Player1))
+END
+
