@@ -412,6 +412,16 @@ THEN
 END
 
 IF
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("OHB_EVENT_102","MYAREA",1)
+	Global("ZB_NEPH_INTERJECT_1","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ZB_NEPH_INTERJECT_1","GLOBAL",1)
+		ActionOverride("zbneph",StartDialogNoSet([PC]))
+END
+
+IF
 	Global("OHB_START_BATTLE","GLOBAL",1)
 	Global("ohb_plot_cutscene","global",0)
 THEN

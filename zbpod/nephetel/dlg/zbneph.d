@@ -51,9 +51,14 @@ IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",2)~ THEN BEGIN zbnepharenahub02
   IF ~~ THEN DO ~SetGlobal("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)~ GOTO zbnepharenahub
 END
 
+IF ~Global("ZB_NEPH_INTERJECT_1","GLOBAL",1)~ THEN BEGIN
+  SAY ~As you see, anyone can be replaced here. Even the most loyal are enslaved in some way. Whether it is money, magic, or by force. It's detestable but that is the way it works here.~
+  IF ~~ THEN DO ~SetGlobal("ZBNEPH_COMMENT_1","GLOBAL",2)~ EXIT
+END
+
 IF ~Global("ZB_NEPH_INTRO_RESPONSE","GLOBAL",10)~ THEN BEGIN zbnepharenahub
 SAY @22 /* What can I do for you? */
-+ ~Global("nepharena1","LOCALS",0)~ + @23 /* How did you come to this place? */ + zbnepharena2
++ ~Global("nepharena1","LOCALS",0)~ + @23 /* How did you come to this place? */ + zbnepharena1
 + ~Global("nepharena2","LOCALS",0)~ + @39 /* I only know your name, tell me a bit about yourself? */ + zbnepharena2
 + ~Global("nepharena3","LOCALS",0)~ + @24 /* Do you have any ideas on how to escape this place? */ + zbnepharena3
 + ~Global("nepharena4","LOCALS",0)~ + @25 /* You look familiar. There was a messenger who got me into this mess and your voice sounds suspiciously similar. */ + zbnepharena4
