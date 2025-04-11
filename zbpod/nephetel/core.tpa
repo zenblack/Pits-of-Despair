@@ -17,7 +17,7 @@ COPY ~%MOD_FOLDER%/nephetel/cre/zbneph.cre~ ~override~
 
 COPY ~%MOD_FOLDER%/nephetel/searingsmite~ ~override~
 COPY_EXISTING ~zbsear01.spl~ ~override~
-  SAY NAME2 @10110
+  SAY NAME1 @10110
 
 // ToB
 COPY_EXISTING ~zbneph.cre~ ~override/zbnep25.cre~
