@@ -420,15 +420,13 @@ END
 
 IF ~Global("OHB_TALKED_TARTL","LOCALS",2) Global("ohb_finale","global",0)~ THEN BEGIN 46
   SAY @3246 /* Hello again, <CHARNAME>. The arena awaits! */
-  IF ~Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN REPLY @3686 /* I am ready! */ GOTO 7
-  IF ~!Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN REPLY @3687 /* Indeed. */ GOTO 47
+  IF ~~ THEN REPLY @3687 /* Indeed. */ GOTO 47
   IF ~~ THEN REPLY @3247 /* Before we get to that, may I ask you some questions? */ GOTO 45
   IF ~~ THEN REPLY @3250 /* Let it. I've other things to do. */ EXIT
 END
 
 IF ~~ THEN BEGIN 47
   SAY @3251 /* So, will you be fighting our latest offering? */
-  IF ~~ THEN REPLY @3254 /* Actually, never mind—I shall return. */ EXIT
   IF ~Global("OHB_LAST_BATTLE","GLOBAL",0)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ GOTO 7
   IF ~Global("OHB_LAST_BATTLE","GLOBAL",101)~ THEN REPLY @3252 /* I'd like to fight my next battle. */ DO ~
       SetCutSceneLite(TRUE)
@@ -536,11 +534,7 @@ SetGlobal("OHB_404","GLOBAL",1)
 SetGlobal("OHB_ARENA","GLOBAL",1)
 SetGlobal("OHB_INTERVIEW","GLOBAL",1)
 ~ EXIT
-//   IF ~False()// This is always FALSE
-//   // OR(2)
-//   //   Global("OHB_DEBUG","GLOBAL",1)
-//   //   GlobalGT("OHB_LAST_BATTLE","GLOBAL",0)
-// ~ THEN REPLY @3253 /* Let me fight a previous battle again. */ GOTO 48
+  IF ~~ THEN REPLY @3254 /* Actually, never mind—I shall return. */ EXIT
 END
 
 /* START OF DISABLED BLOCK */
