@@ -15,6 +15,17 @@ COPY ~%MOD_FOLDER%/nephetel/cre/zbneph.cre~ ~override~
   WRITE_ASCII DEATHVAR ~zbneph~ #32
   WRITE_ASCII DIALOG ~zbneph~ #8
 
+// Arena Neph
+COPY ~%MOD_FOLDER%/nephetel/cre/zbneph.cre~ ~override/zbnepha.cre~
+  SAY 0x08 @15001
+  SAY 0x0c @15001
+  WRITE_ASCII PORTRAIT_LARGE ~zbnephy~ #8
+  WRITE_ASCII PORTRAIT_SMALL ~zbnephy~ #8
+  WRITE_ASCII SCRIPT_OVERRIDE ~zbnephs~ #8
+  WRITE_ASCII 0x268 ~zbnepar1~ #8
+  WRITE_ASCII DEATHVAR ~zbneph~ #32
+  WRITE_ASCII DIALOG ~zbneph~ #8
+
 COPY ~%MOD_FOLDER%/nephetel/searingsmite~ ~override~
 COPY_EXISTING ~zbsear01.spl~ ~override~
   SAY NAME1 @10110

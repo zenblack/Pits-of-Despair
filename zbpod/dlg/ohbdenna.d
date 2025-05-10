@@ -2455,7 +2455,12 @@ IF ~  Global("OHB_BATTLE_COMPLETE","GLOBAL",2)
 Global("OHB_105","GLOBAL",2)
 ~ THEN BEGIN 214
   SAY @848 /* A victory worthy of the epics! */
-  IF ~~ THEN DO ~SetGlobal("OHB_105","GLOBAL",-1)
+  IF ~Global("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",2)~ THEN DO ~SetGlobal("OHB_105","GLOBAL",-1)
+GiveGoldForce(1500)
+ActionOverride("ZBNEPHA",DestroySelf()) // Destory Neph Arena
+SetGlobal("ohb_cutscene_exit","global",1)
+~ EXIT
+  IF ~!Global("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",2)~ THEN DO ~SetGlobal("OHB_105","GLOBAL",-1)
 GiveGoldForce(1500)
 SetGlobal("ohb_cutscene_exit","global",1)
 ~ EXIT

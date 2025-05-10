@@ -17,9 +17,9 @@ IF
 	Global("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",1)
 THEN
 	RESPONSE #100
-	SetGlobal("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",2)
-	CreateCreature("ZBNEPH",[920.1150],N)  // Neph
-	SmallWait(5)
+		SetGlobal("ZB_SPAWN_NEPHY_FIGHT5","GLOBAL",2)
+		CreateCreature("ZBNEPHA",[920.1150],N)  // Neph Arena
+		SmallWait(5)
 END
 
 IF
