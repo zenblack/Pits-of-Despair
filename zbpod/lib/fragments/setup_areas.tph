@@ -149,3 +149,8 @@ END
 
 APPEND ~MASTAREA.2da~ ~ZB8100     value      ~
 UNLESS ~ZB8100~
+
+//-------------------------------------------------------------------------
+// Watcher's Keep -- Crypt -- Demi-Lich
+COPY_EXISTING ~ar3027.are~ ~override~
+  LPF ALTER_AREA_ACTOR STR_VAR actor_name = ~Demi-Lich~ cre_file = ~zbademi1~ END // Replace demilich with new version in wk

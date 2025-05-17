@@ -23,6 +23,14 @@ COPY_EXISTING ~ohbstirv.cre~ ~override~
     SAY 0x08 @15004
     SAY 0x0c @15004
 
+// demilich - give unique creature name and script to deconflict with other mods that may use the same character
+COPY_EXISTING ~demilich.CRE~ ~override/zbademi1.cre~
+  WRITE_BYTE 0x234  30   // Level
+  WRITE_BYTE 0x24   99   // Current HP
+  WRITE_BYTE 0x26   99   // Maximum HP
+  WRITE_ASCII 0x268 ~zbademi1~ #8 // Add Default Script
+  WRITE_ASCII 0x280 ~zbademi1~ #8 // Script Name
+
 COPY ~%MOD_FOLDER%/creatures/mutvampworg~ ~override~
 
 // Create 5 unique instances of vampiric worgs
@@ -577,6 +585,7 @@ COPY ~%MOD_FOLDER%/creatures/#scripts/momatk01.baf~ ~override/momatk01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mogit01.baf~  ~override/mogit01.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mogit02.baf~  ~override/mogit02.bcs~
      ~%MOD_FOLDER%/creatures/#scripts/mogit03.baf~  ~override/mogit03.bcs~
+     ~%MOD_FOLDER%/creatures/#scripts/zbademi1.baf~ ~override/zbademi1.bcs~
   COMPILE_BAF_TO_BCS
 
 EXTEND_TOP ~nymph.bcs~ ~%MOD_FOLDER%/creatures/#scripts/mohunt1.baf~
