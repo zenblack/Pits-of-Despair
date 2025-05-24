@@ -81,6 +81,34 @@ THEN
 END
 
 IF
+	Global("ZBCUT09SKIP_CUTSCENE_BREAKABLE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetCutSceneBreakable(FALSE)
+		ClearAllActions()
+		SetGlobal("ZBCUT09SKIP_CUTSCENE_BREAKABLE","GLOBAL",2)
+		FadeToColor([50.0],0)
+		ActionOverride("ohbwing",ReallyForceSpell(Myself,DRYAD_TELEPORT))  // SPWI995.SPL (Dimension Door)
+		Wait(4)
+		ActionOverride("OHBIMASC",DestroySelf())  // Imascus
+		ActionOverride("OHBMERLE",DestroySelf())  // Merle
+		ActionOverride("OHBLITTL",DestroySelf())  // Little John
+		SmallWait(5)
+		CreateCreature("OHBMIN01",[1578.690],SSW)
+		CreateCreature("OHBMIN01",[1701.786],SSW)
+		Wait(1)
+		DayNight(DUSK_END)
+		FadeFromColor([50.0],0)
+		SmallWait(25)
+		SetGlobal("OHB_EVENT_102_DIALOG","MYAREA",2)
+		SetGlobal("OHB_EVENT_102","MYAREA",1)
+		SetGlobal("OHB_ENEMY_OVERRIDE","GLOBAL",0)
+		ApplySpell("ohbdenna",RESTORE_FULL_HEALTH)  // Dennaton
+		Wait(1)
+		ActionOverride("ohbdenna",StartDialogueNoSet(Player1))
+END
+
+IF
 	Global("ohb_item_reward","global",1)
 	OR(2)
 		Global("ohb_102_item_good","global",0)

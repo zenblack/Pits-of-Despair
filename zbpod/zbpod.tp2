@@ -98,7 +98,6 @@ COPY ~%MOD_FOLDER%/animations/red_worg~ ~override~
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/cutscene~ USING ~%MOD_FOLDER%/lang/%LANGUAGE%/cutscenes.tra~
 COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts~
-COMPILE ~%MOD_FOLDER%/ohbvic01~ /* editing the item_roll at the bottom to be zero so we ALWAYS get loot */ /* using EVALUATE BUFFER here means it won't install where going YOLO */
 
 /* new journal entries */
 ADD_JOURNAL TITLE (@800000) @800001 USING ~%MOD_FOLDER%/lang/english/JournalEntries.tra~
