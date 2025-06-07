@@ -473,7 +473,7 @@ COPY_EXISTING ~ohbvmp01.cre~ ~override~
     WRITE_BYTE 0x61  20  // Crushing resistance
     WRITE_BYTE 0x62  20  // Piercing resistance
     WRITE_BYTE 0x63  20  // Missile resistance
-    WRITE_BYTE 0x0272 125 // Vampire
+    WRITE_BYTE 0x272 IDS_OF_SYMBOL(general UNDEAD) // Vampire
     ADD_CRE_ITEM ~RING95~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~ EQUIP
     LPF ADD_CRE_EFFECT INT_VAR opcode = 176 target = 0 parameter1 = 5 parameter2 = 0 timing = 9 resist_dispel = 0 probability1 = 100 END  // movement speed bonus
 
@@ -490,7 +490,7 @@ COPY_EXISTING ~ohbvmp02.cre~ ~override~
     WRITE_BYTE 0x61   10  // Crushing resistance
     WRITE_BYTE 0x62   10  // Piercing resistance
     WRITE_BYTE 0x63   10  // Missile resistance
-    WRITE_BYTE 0x0272 125 // Vampire
+    WRITE_BYTE 0x272 IDS_OF_SYMBOL(general UNDEAD) // Vampire
     WRITE_ASCII 0x260 ~momatk02~ #8 // General Script (vampire attacks)
     ADD_CRE_ITEM ~RING95~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~ EQUIP
     REPLACE_CRE_ITEM ~VAMP1~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~WEAPON1~ EQUIP
@@ -505,7 +505,7 @@ COPY_EXISTING ~ohbvmp03.cre~ ~override~
     WRITE_BYTE 0x23d 19  // Constitution
     WRITE_BYTE 0x52   6  // thac0
     WRITE_BYTE 0x53   7  // 3/2 APR
-    WRITE_BYTE 0x0272 125 // Vampire
+    WRITE_BYTE 0x272 IDS_OF_SYMBOL(general UNDEAD) // Vampire
     WRITE_ASCII 0x258 ~motatk01~ #8 // Race Script (thief attacks)
     WRITE_ASCII 0x260 ~momatk02~ #8 // General Script (vampire attacks)
     ADD_CRE_ITEM ~RING95~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~GLOVES~ EQUIP
