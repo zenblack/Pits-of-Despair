@@ -138,3 +138,18 @@ INTERJECT_COPY_TRANS OHBSTIRV 7 ZBTRAININGPRE2
   == CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID) InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN @3754 /* Calmly, dear Nalia, we shall not break as the branches of an oak in a summer storm. */
   == NALIAJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID) InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN @3755 /* I hope you are right. */
 END
+
+INTERJECT_COPY_TRANS OHBSTIRV 7 ZBTRAININGPRE3
+  == AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @3863 /* D-do we ... have to ... kill animals? I loved animals at the circus. Their trainers loved them too and wouldn't think to hurt them as they showed how beautiful, strong, and smart they were. T-this isn't like the circus, this is WRONG. */
+  == RASAADJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID) InParty("RASAAD") InMyArea("RASAAD") !StateCheck("RASAAD",CD_STATE_NOTVALID)~ THEN @3864 /* Nature exists in cycles, gentle one. Even those who are beautiful or strong must one day be embraced by the shadow of death and rebirth. */
+  == AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID) InParty("RASAAD") InMyArea("RASAAD") !StateCheck("RASAAD",CD_STATE_NOTVALID)~ THEN @3865 /* B-but we don't have to help them, do we? */
+  == RASAADJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID) InParty("RASAAD") InMyArea("RASAAD") !StateCheck("RASAAD",CD_STATE_NOTVALID)~ THEN @3866 /* We are but the wheel on which existence turns. None may escape their part. */
+END
+
+// After Training match 1
+INTERJECT_COPY_TRANS OHBSTIRV 16 ZBTRAININGPOST1
+  == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN @3867 /* Ach. It be a marvelous wonder to cut through wee beasties an' get paid fer the pleasure. Count out yer coin, we'll slaughter yon bloody puppies an' empty yer pockets! */
+  == EDWINJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID) InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3868 /* Yes, the money. (This moron of a dwarf is so blinded by coin he rarely sees past his own nose). */
+  == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID) InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3869 /* Wizard, yer robes are open and I see how dainty yon smallclothes be. Don't trifle with th' coin! */
+  == EDWINJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID) InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3870 /* Of course. (Bah, Can we find a new block of meat to stand behind?) */
+END
