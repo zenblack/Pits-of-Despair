@@ -1,10 +1,3 @@
-// creator  : weidu (version 24900)
-// argument : OHBDORMA.DLG
-// game     : ..
-// source   : ../DATA/BLACKPITS.BIF
-// dialog   : ..\lang\en_us\dialog.tlk
-// dialogF  : (none)
-
 BEGIN ~OHBDORMA~
 
 IF ~  Global("ohb_finale","GLOBAL",8)
@@ -28,6 +21,6 @@ IF ~~ THEN BEGIN 2
 END
 
 IF ~~ THEN BEGIN 3
-  SAY @926 /* No. I'm keeping this one for myself. */
-  IF ~~ THEN EXTERN ~OHBTHASS~ 1
+  SAY @926 /* No. This one has interfered in my affairs for the last time—he will be coming with us, along with the rest of the mortals. */
+  IF ~~ THEN EXTERN ~OHBJOKER~ 29
 END

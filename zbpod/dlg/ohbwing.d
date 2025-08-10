@@ -3,8 +3,8 @@ BEGIN ~OHBWING~
 IF ~~ THEN BEGIN 0
   SAY @0 /* I tire of this prattle. Take them! */
   IF ~~ THEN DO ~SetGlobal("OHB_BP2_CAPTURE","GLOBAL",4)
-SetGlobalTimer("ohb_suzail_delay","oh8000",60)
-SetGlobalTimer("ohb_najim_intro","oh8000",5)
+SetGlobalTimer("ohb_suzail_delay","ZB2010",60)
+SetGlobalTimer("ohb_najim_intro","ZB2010",5)
 Enemy()
 ActionOverride("ohbbanno",Enemy())
 ActionOverride("ohbthass",Enemy())

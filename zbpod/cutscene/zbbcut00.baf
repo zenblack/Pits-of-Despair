@@ -17,8 +17,6 @@ THEN
 		ApplySpellRES("SPBP001",Player4)  // No such index
 		ApplySpellRES("SPBP001",Player5)  // No such index
 		ApplySpellRES("SPBP001",Player6)  // No such index
-		//ReallyForceSpell(Player1,LOSE_ALL)  SPIN838.SPL (Loses all Bhaal powers)
-		CreateCreature("ohbbarte",[489.405],SE)  // Bartender
 		CreateCreature("ohbjoker",[585.473],SE)  // Joker
 		ActionOverride("ohbjoker",Polymorph(NOBLE_WOMAN))
 		ActionOverride("ohbjoker",SetName(1083))  // Bard

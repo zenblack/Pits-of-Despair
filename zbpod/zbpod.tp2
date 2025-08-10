@@ -91,6 +91,7 @@ COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/dlg/ohbbello.d~
                         ~%MOD_FOLDER%/dlg/ohbstirv.d~
                         ~%MOD_FOLDER%/dlg/ohbtartl.d~
                         ~%MOD_FOLDER%/dlg/gaelan.d~
+                        ~%MOD_FOLDER%/dlg/ohbpol.d~
                         ~%MOD_FOLDER%/dlg/zbeshpeu.d~
                         ~%MOD_FOLDER%/dlg/zbvci.d~
                         ~%MOD_FOLDER%/dlg/zbvyan.d~

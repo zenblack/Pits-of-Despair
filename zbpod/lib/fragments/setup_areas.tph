@@ -70,6 +70,16 @@ END
 APPEND ~MASTAREA.2da~ ~ZB0799     value      ~
 UNLESS ~ZB0799~
 
+// ZB2010
+COPY ~%MOD_FOLDER%/creatures/zbtavern~ ~override~
+
+COMPILE EVALUATE_BUFFER ~%MOD_FOLDER%/bp2scripts/zb2010.baf~
+
+COPY ~%MOD_FOLDER%/area/zb2010/zb2010.are~ ~override~
+
+APPEND ~MASTAREA.2da~ ~ZB2010     value      ~
+UNLESS ~ZB2010~
+
 // Add neph to trademeet inn after escape
 EXTEND_BOTTOM ~AR2010.BCS~ ~%MOD_FOLDER%/bp2scripts/ar2010.baf~
   EVALUATE_BUFFER

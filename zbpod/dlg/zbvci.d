@@ -1,8 +1,3 @@
-/* Vanilla Companion Interjections
-A file where anyone can add vanilla npc interjections they think are suitable in PoD
-These lines have not been tra-ified due to not being proofread or approved yet */
-
-/* intro dialogue upon being transported to OH8100, after speaking to Voghiln */
 APPEND PLAYER1
 
 IF ~Global("ZBPODINTRO","GLOBAL",1)~ THEN BEGIN ZBPODIntro
@@ -12,6 +7,26 @@ SAY @3688 /* Once more you find yourself in chains, a prisoner of fate's cruel d
 END
 
 END // FOR TOP APPEND
+
+// Minsc Najim
+INTERJECT_COPY_TRANS OHBNAJIM 0 ZBNAJIM_MINSC
+  == MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN @3872 /* There is no danger with Minsc and Boo at your side! Take heed, floaty-man, the hamster will protect you! */
+END
+
+// Valygar Joker
+INTERJECT_COPY_TRANS OHBJOKER 26 ZBJOKER_VALYGAR
+ == VALYGARJ IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN @3872 /* Without your disguises there is nothing to stop us from cutting you down, deceiver. Choose your next words carefully. */
+END
+
+// Dormamus
+INTERJECT_COPY_TRANS OHBJOKER 26 ZBDORMAMUS_REMARK
+  == EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @3875 /* What is this pitiful charade? Must we be caught up in every fool’s drama? */
+  == AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @3876 /* They look quite p-powerful, <CHARNAME>. Do we really have a chance against them? */
+  == ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @3877 /* Lay a hand on me, and you’ll wish you never left whatever hole you crept out from, villains! */
+  == HAERDAJ IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN @3878 /* The events of the day continue to become livelier and livelier, don’t they? */
+  == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN @3879 /* What’re we standing around yapping for? Let’s get to cracking some skulls! */
+  == NEERAJ IF ~InParty("NEERA") InMyArea("NEERA") !StateCheck("NEERA",CD_STATE_NOTVALID)~ THEN @3880 /* Nuh-uh. No way. I’ve had enough mysterious forces trying to capture me for one lifetime, thank you very much. */
+END
 
 CHAIN Player1 ZBPoDIntro2
 @3691 /* Your companions stand beside you, their expressions betraying the same confusion and unease. */
