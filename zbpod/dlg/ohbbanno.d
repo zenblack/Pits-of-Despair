@@ -1,10 +1,3 @@
-// creator  : weidu (version 24900)
-// argument : OHBBANNO.DLG
-// game     : ..
-// source   : ../DATA/BLACKPITS.BIF
-// dialog   : ..\lang\en_us\dialog.tlk
-// dialogF  : (none)
-
 BEGIN ~OHBBANNO~
 
 IF ~~ THEN BEGIN 0

@@ -1,0 +1,304 @@
+IF
+	Global("OHB_START_TAVERN","MYAREA",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		FadeToColor([0.0],0)
+		SetGlobal("OHB_START_TAVERN","MYAREA",1)
+		SetGlobal("BDAI_RESET_TIMERS","GLOBAL",1)
+		StartCutScene("zbbcut00")
+END
+
+IF
+	Global("ohb_bp2_capture","global",4)
+	Global("ohb_suzail_players_lost","zb2010",0)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_player1_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_player2_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_player3_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_player4_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_player5_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_player6_lost","zb2010",1)  // TBP2 - Suzail Tavern
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_suzail_players_lost","zb2010",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+	Global("ohb_bp2_capture","global",4)
+	Global("ohb_suzail_hunters_lost","zb2010",0)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_pol_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_thass_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_joker_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_dorma_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_banno_lost","zb2010",1)  // TBP2 - Suzail Tavern
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_suzail_hunters_lost","zb2010",1)  // TBP2 - Suzail Tavern
+END
+
+IF
+	Global("ohb_bp2_capture","global",4)
+	Global("ohb_suzail_players_lost","zb2010",0)  // TBP2 - Suzail Tavern
+	!Dead("ohbnajim")  // Najim
+	Global("ohb_suzail_hunters_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Dead("ohbwing")  // The Winged
+THEN
+	RESPONSE #100
+		SetCursorState(TRUE)
+		ClearAllActions()
+		SetGlobal("ohb_bp2_capture","global",5)
+		ActionOverride("ohbnajim",SetSequence(SEQ_READY))
+		ActionOverride(Player1,SetSequence(SEQ_READY))
+		ActionOverride(Player2,SetSequence(SEQ_READY))
+		ActionOverride(Player3,SetSequence(SEQ_READY))
+		ActionOverride(Player4,SetSequence(SEQ_READY))
+		ActionOverride(Player5,SetSequence(SEQ_READY))
+		ActionOverride(Player6,SetSequence(SEQ_READY))
+		CreateCreature("cutspy",[730.560],N)
+		ReallyForceSpellPointRES("ohbsuza2",[1.1])
+		MoveViewObject("ohbnajim",BD_NORMAL)  // Najim
+		SetGlobal("ohb_bp2_capture","global",8)
+END
+
+IF
+	Global("ohb_bp2_capture","global",4)
+	Global("ohb_suzail_players_lost","zb2010",0)  // TBP2 - Suzail Tavern
+	Dead("ohbnajim")  // Najim
+	Global("ohb_suzail_hunters_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Dead("ohbwing")  // The Winged
+THEN
+	RESPONSE #100
+		SetCursorState(TRUE)
+		ClearAllActions()
+		SetGlobal("ohb_bp2_capture","global",5)
+		ActionOverride(Player1,SetSequence(SEQ_READY))
+		ActionOverride(Player2,SetSequence(SEQ_READY))
+		ActionOverride(Player3,SetSequence(SEQ_READY))
+		ActionOverride(Player4,SetSequence(SEQ_READY))
+		ActionOverride(Player5,SetSequence(SEQ_READY))
+		ActionOverride(Player6,SetSequence(SEQ_READY))
+		CreateCreature("cutspy",[730.560],N)
+		ReallyForceSpellPointRES("ohbsuza2",[1.1])
+		MoveViewPoint([680.355],BD_NORMAL)
+		Wait(3)
+		CreateVisualEffect("SPPORTAL",[680.355])
+		SmallWait(25)
+		SetGlobal("sprite_is_deadohbnajim","global",0)
+		CreateCreature("ohbnajim",[680.355],S)  // Najim
+		CreateVisualEffect("SPGFLSHI",[680.355])
+		SmallWait(5)
+		PlaySound("ogrem01")
+		SetGlobal("ohb_bp2_capture","global",8)
+END
+
+IF
+	Global("ohb_bp2_capture","global",4)
+	Global("ohb_suzail_players_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	!Dead("ohbwing")  // The Winged
+THEN
+	RESPONSE #100
+		SetCursorState(TRUE)
+		SetGlobal("ohb_bp2_capture","global",5)
+		ChangeEnemyAlly("ohbwing",NEUTRAL)  // The Winged
+		ChangeEnemyAlly("ohbpol",NEUTRAL)  // Pol Pyrrus
+		ChangeEnemyAlly("ohbjoker",NEUTRAL)  // Joker
+		ChangeEnemyAlly("ohbbanno",NEUTRAL)  // Bannor
+		ChangeEnemyAlly("ohbthass",NEUTRAL)  // Thassk Kun
+		ChangeEnemyAlly("ohbdorma",NEUTRAL)  // Dormamus
+		ClearAllActions()
+		ActionOverride("ohbbanno",SetSequence(SEQ_READY))
+		ActionOverride("ohbdorma",SetSequence(SEQ_READY))
+		ActionOverride("ohbjoker",SetSequence(SEQ_READY))
+		ActionOverride("ohbpol",SetSequence(SEQ_READY))
+		ActionOverride("ohbthass",SetSequence(SEQ_READY))
+		ActionOverride("ohbwing",SetSequence(SEQ_READY))
+		CreateCreature("cutspy",[730.560],N)
+		MoveViewObject("ohbwing",BD_NORMAL)  // The Winged
+		ActionOverride("ohbwing",FaceObject("ohbnajim"))  // Najim
+		ActionOverride("ohbwing",SetSequence(SEQ_HEAD_TURN))
+		SetGlobal("ohb_bp2_capture","global",6)
+END
+
+IF
+	Global("ohb_bp2_capture","global",4)
+	Global("ohb_suzail_players_lost","zb2010",1)  // TBP2 - Suzail Tavern
+	Dead("ohbwing")  // The Winged
+THEN
+	RESPONSE #100
+		SetCursorState(TRUE)
+		SetGlobal("ohb_bp2_capture","global",5)
+		ChangeEnemyAlly("ohbwing",NEUTRAL)  // The Winged
+		ChangeEnemyAlly("ohbpol",NEUTRAL)  // Pol Pyrrus
+		ChangeEnemyAlly("ohbjoker",NEUTRAL)  // Joker
+		ChangeEnemyAlly("ohbbanno",NEUTRAL)  // Bannor
+		ChangeEnemyAlly("ohbthass",NEUTRAL)  // Thassk Kun
+		ChangeEnemyAlly("ohbdorma",NEUTRAL)  // Dormamus
+		ClearAllActions()
+		ActionOverride("ohbbanno",SetSequence(SEQ_READY))
+		ActionOverride("ohbdorma",SetSequence(SEQ_READY))
+		ActionOverride("ohbjoker",SetSequence(SEQ_READY))
+		ActionOverride("ohbpol",SetSequence(SEQ_READY))
+		ActionOverride("ohbthass",SetSequence(SEQ_READY))
+		MoveViewPoint([790.620],BD_NORMAL)
+		CreateCreature("cutspy",[730.560],N)
+		Wait(3)
+		CreateVisualEffect("SPHOLY",[790.620])
+		SmallWait(32)
+		CreateVisualEffect("SPSPEV",[790.620])
+		SetGlobal("sprite_is_deadohbwing","global",0)
+		SmallWait(9)
+		CreateCreature("ohbwing",[790.620],NW)  // The Winged
+		ActionOverride("ohbwing",ChangeAIScript("",OVERRIDE))
+		ActionOverride("ohbwing",ChangeAIScript("",GENERAL))
+		ActionOverride("ohbwing",SetSequence(SEQ_AWAKE))
+		SmallWait(7)
+		CreateVisualEffectObject("SPHEALIN","ohbwing")  // The Winged
+		SmallWait(3)
+		ActionOverride("ohbwing",SetSequence(SEQ_HEAD_TURN))
+		Wait(1)
+		ActionOverride("ohbwing",SetSequence(SEQ_READY))
+		Wait(2)
+		SetGlobal("ohb_bp2_capture","global",6)
+END
+
+IF
+	Global("ohb_bp2_capture","global",6)
+	OR(12)
+		StateCheck(Player1,STATE_REALLY_DEAD)
+		StateCheck(Player2,STATE_REALLY_DEAD)
+		StateCheck(Player3,STATE_REALLY_DEAD)
+		StateCheck(Player4,STATE_REALLY_DEAD)
+		StateCheck(Player5,STATE_REALLY_DEAD)
+		StateCheck(Player6,STATE_REALLY_DEAD)
+		Dead("ohbnajim")  // Najim
+		Dead("ohbbanno")  // Bannor
+		Dead("ohbdorma")  // Dormamus
+		Dead("ohbjoker")  // Joker
+		Dead("ohbpol")  // Pol Pyrrus
+		Dead("ohbthass")  // Thassk Kun
+THEN
+	RESPONSE #100
+		SetCursorState(TRUE)
+		SetGlobal("ohb_bp2_capture","global",7)
+		ClearAllActions()
+		SmallWait(5)
+		DisplayStringHead("ohbwing",90466)  // Bind and ready them for transport. Dennaton will pay us handsomely for these ones.
+		Wait(5)
+		FadeToColor([20.0],0)
+		ApplySpellRES("SPBP001","ohbwing")
+		Wait(1)
+		ReallyForceSpellPointRES("ohbremov",[1.1])
+		Wait(1)
+		ReallyForceSpellPointRES("ohbsuza2",[1.1])
+		SmallWait(1)
+		ActionOverride("ohbwing",ReallyForceSpell(Myself,CLERIC_MASS_RAISE_DEAD))  // SPPR729.SPL (Mass Raise Dead)
+		Wait(1)
+		StartCutScene("ohbcut03")
+END
+
+IF
+	Global("ohb_bp2_capture","global",6)
+THEN
+	RESPONSE #100
+		SetCursorState(TRUE)
+		SetGlobal("ohb_bp2_capture","global",7)
+		ClearAllActions()
+		SmallWait(5)
+		DisplayStringHead("ohbwing",90466)  // Bind and ready them for transport. Dennaton will pay us handsomely for these ones.
+		Wait(5)
+		FadeToColor([20.0],0)
+		ApplySpellRES("SPBP001","ohbwing")
+		Wait(1)
+		ReallyForceSpellPointRES("ohbremov",[1.1])
+		Wait(1)
+		ReallyForceSpellPointRES("ohbsuza2",[1.1])
+		Wait(1)
+		StartCutScene("ohbcut03")
+END
+
+IF
+	Global("ohb_bp2_capture","global",8)
+	OR(6)
+		StateCheck(Player1,STATE_REALLY_DEAD)
+		StateCheck(Player2,STATE_REALLY_DEAD)
+		StateCheck(Player3,STATE_REALLY_DEAD)
+		StateCheck(Player4,STATE_REALLY_DEAD)
+		StateCheck(Player5,STATE_REALLY_DEAD)
+		StateCheck(Player6,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetCursorState(TRUE)
+		SetGlobal("ohb_bp2_capture","global",9)
+		ClearAllActions()
+		Wait(2)
+		ActionOverride("ohbnajim",ForceSpell(Myself,CLERIC_MASS_RAISE_DEAD))  // SPPR729.SPL (Mass Raise Dead)
+		Wait(5)
+		ActionOverride("ohbnajim",FaceObject(Player1))
+		Wait(1)
+		ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
+END
+
+IF
+	Global("ohb_bp2_capture","global",8)
+THEN
+	RESPONSE #100
+		SetCursorState(TRUE)
+		SetGlobal("ohb_bp2_capture","global",9)
+		ClearAllActions()
+		Wait(2)
+		ActionOverride("ohbnajim",FaceObject(Player1))
+		Wait(1)
+		ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
+END
+
+IF
+	Global("ohb_bp2_capture","global",4)
+	Global("ohb_bartender_ot","zb2010",0)  // TBP2 - Suzail Tavern
+	!GlobalTimerNotExpired("ohb_bartender_ot_timer","zb2010")  // TBP2 - Suzail Tavern
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_bartender_ot","zb2010",1)  // TBP2 - Suzail Tavern
+		SetGlobalTimer("ohb_bartender_ot_timer","zb2010",ONE_ROUND)  // TBP2 - Suzail Tavern
+	RESPONSE #100
+		SetGlobal("ohb_bartender_ot","zb2010",1)  // TBP2 - Suzail Tavern
+		SetGlobalTimer("ohb_bartender_ot_timer","zb2010",TWO_ROUNDS)  // TBP2 - Suzail Tavern
+	RESPONSE #100
+		SetGlobal("ohb_bartender_ot","zb2010",1)  // TBP2 - Suzail Tavern
+		SetGlobalTimer("ohb_bartender_ot_timer","zb2010",THREE_ROUNDS)  // TBP2 - Suzail Tavern
+END
+
+IF
+	Global("ohb_bp2_capture","global",4)
+	Global("ohb_bartender_ot","zb2010",1)  // TBP2 - Suzail Tavern
+	GlobalTimerExpired("ohb_bartender_ot_timer","zb2010")  // TBP2 - Suzail Tavern
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_bartender_ot","zb2010",0)  // TBP2 - Suzail Tavern
+		DisplayStringHead("ohbbarte",101754)  // If you have a score to settle, take it outside... I run a tavern, not some cheap gladiator pit.
+	RESPONSE #100
+		SetGlobal("ohb_bartender_ot","zb2010",0)  // TBP2 - Suzail Tavern
+		DisplayStringHead("ohbbarte",101755)  // Ladies, gentlemen, please... That's expensive furniture you're destroying!
+	RESPONSE #100
+		SetGlobal("ohb_bartender_ot","zb2010",0)  // TBP2 - Suzail Tavern
+		DisplayStringHead("ohbbarte",101756)  // The losing side is paying for property damage with their belongings.
+	RESPONSE #100
+		SetGlobal("ohb_bartender_ot","zb2010",0)  // TBP2 - Suzail Tavern
+		DisplayStringHead("ohbbarte",101757)  // Come on, if you're gonna fight, fight like you mean it.
+	RESPONSE #100
+		SetGlobal("ohb_bartender_ot","zb2010",0)  // TBP2 - Suzail Tavern
+		DisplayStringHead("ohbbarte",101758)  // Let me know if anyone ruptures a knee. The local guard captain is short of men-at-arms.
+	RESPONSE #100
+		SetGlobal("ohb_bartender_ot","zb2010",0)  // TBP2 - Suzail Tavern
+		DisplayStringHead("ohbbarte",101759)  // Adventurers, always the same. Serve them a round and they're after each other's throats in minutes.
+END
+
+IF
+	Global("ohb_najim_intro_bark","zb2010",0)  // TBP2 - Suzail Tavern
+	GlobalGT("ohb_suzail_players_down","zb2010",2)  // TBP2 - Suzail Tavern
+	Global("ohb_suzail_hunters_lost","zb2010",0)  // TBP2 - Suzail Tavern
+THEN
+	RESPONSE #100
+		SetGlobal("ohb_najim_intro_bark","zb2010",1)  // TBP2 - Suzail Tavern
+		DisplayStringHead("ohbnajim",102548)  // The battle is hopeless, my friend! Lay down your arms and perhaps they will grant you mercy.
+END
+

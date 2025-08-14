@@ -74,9 +74,24 @@ THEN
 		SmallWait(3)
 		ActionOverride("ohbwing",Face(NW))
 		SmallWait(20)
+		DisplayStringHead("zbmnob1", @50) /* What the hells?! */ 
+		SmallWait(10)
+		DisplayStringHead("zbmpea1", @51) /* Run for it! */
+		ActionOverride("zbbarte", MoveToPointNoInterrupt([100.100]))
+		SmallWait(5)
+		OpenDoor("Door1")
+		SmallWait(25)
+		ActionOverride("ohbbanno",MoveToObjectNoInterrupt("zbmnob1"))
+		SmallWait(25)
+		ActionOverride("ohbbanno",Attack("zbmnob1"))
+		SmallWait(25)
+		ActionOverride("zbfnob1",EscapeAreaDestroy(2))
+		ActionOverride("zbmpea1",EscapeAreaDestroy(1))
+		Wait(3)
 		SetCutSceneBreakable(FALSE)
 		SetGlobal("BD_CUTSCENE_BREAKABLE","GLOBAL",0)
 		SetAreaScript("",OVERRIDE)
+		SetGlobal("OHB_BP2_CAPTURE","GLOBAL",3)
 		ActionOverride("ohbnajim",StartDialogueNoSet(Player1))
 END
 

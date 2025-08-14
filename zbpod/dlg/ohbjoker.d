@@ -17,16 +17,10 @@ END
 
 IF ~  Global("OHB_BP2_CAPTURE","GLOBAL",1)
 ~ THEN BEGIN 1
-  SAY @1648 /* It sounds fantastic, I know, but it IS true. I can prove it unless I’m much mistaken, the hero of Baldur’s Gate is among us this very minute. Everyone, say hello to <CHARNAME> our tale’s protagonist in the flesh! */
-  IF ~~ THEN REPLY @1649 /* It is true. How did you know it was me? */ DO ~SetGlobal("OHB_BP2_CAPTURE","GLOBAL",2)
-StartCutSceneMode()
-SmallWait(5)
-CreateCreatureDoor("ohbnajim",[640.447],SE)
-Wait(5)
-ActionOverride("ohbnajim",StartDialogNoSet(Player1))
-~ EXIT
-  IF ~~ THEN REPLY @1650 /* What? Where? */ GOTO 7
-  IF ~~ THEN REPLY @1651 /* I'm not suggesting you should bow before me, but it wouldn't be inappropriate. */ GOTO 8
+  SAY @1648 /* It sounds fantastic, I know, but it IS true. I can prove it. Unless I'm much mistaken, the hero of Baldur's Gate is among us this very minute. Everyone, say hello to <CHARNAME>, our tale's protagonist in the flesh! */
+  IF ~~ THEN REPLY @1649 /* You seem to know more than you should, bard. Where did you come across your information? */ GOTO 7
+  IF ~~ THEN REPLY @1650 /* It’s true… and terribly convenient. Who are you? What is it you want from me? */ GOTO 8
+  IF ~~ THEN REPLY @1651 /* No, I don’t think you have the right person. */ GOTO 27
 END
 
 IF ~~ THEN BEGIN 2
@@ -55,7 +49,7 @@ IF ~~ THEN BEGIN 6
 END
 
 IF ~~ THEN BEGIN 7
-  SAY @1657 /* Come now! I know it's you. I know everything worth knowing, and your fame has spread far and wide. */
+  SAY @1657 /* Why, <CHARNAME>, a lady never reveals her sources. Now, why don’t you tell us why such a *well regarded* hero has ventured so far south? */
   IF ~~ THEN DO ~SetGlobal("OHB_BP2_CAPTURE","GLOBAL",2)
 StartCutSceneMode()
 SmallWait(5)
@@ -66,7 +60,7 @@ ActionOverride("ohbnajim",StartDialogNoSet(Player1))
 END
 
 IF ~~ THEN BEGIN 8
-  SAY @1658 /* Hah! Baeloth's Champion does not lack for ego. */
+  SAY @1658 /* Convenient indeed. It makes me wonder why you've come here this eve… It couldn’t be that someone’s been passing around messages, could it? */
   IF ~~ THEN DO ~SetGlobal("OHB_BP2_CAPTURE","GLOBAL",2)
 StartCutSceneMode()
 SmallWait(5)
@@ -76,11 +70,11 @@ ActionOverride("ohbnajim",StartDialogNoSet(Player1))
 ~ EXIT
 END
 
-IF ~~ THEN BEGIN 9
+IF ~False()~ THEN BEGIN 9
   SAY @1659 /* Bet it does. */
   IF ~~ THEN DO ~SetGlobal("OHB_BP2_CAPTURE","GLOBAL",4)
-SetGlobalTimer("ohb_suzail_delay","oh8000",60)
-SetGlobalTimer("ohb_najim_intro","oh8000",15)
+SetGlobalTimer("ohb_suzail_delay","ZB2010",60)
+SetGlobalTimer("ohb_najim_intro","ZB2010",15)
 Enemy()
 ActionOverride("ohbbanno",Enemy())
 ActionOverride("ohbthass",Enemy())
@@ -429,4 +423,28 @@ END
 IF ~~ THEN BEGIN 26
   SAY @1695 /* I AM a bard. The name's Joker. And the joke? I'm afraid it's on you. */
   IF ~~ THEN EXTERN ~OHBDORMA~ 2
+END
+
+IF ~~ THEN BEGIN 27
+  SAY @3871 /* Oh come now, there’s no need to be modest. After all, you’ve come here intentionally this eve, have you not? */
+  IF ~~ THEN DO ~
+    SetGlobal("OHB_BP2_CAPTURE","GLOBAL",2)
+    StartCutSceneMode()
+    SmallWait(5)
+    CreateCreatureDoor("ohbnajim",[640.447],SE)
+    Wait(5)
+    ActionOverride("ohbnajim",StartDialogNoSet(Player1))~ EXIT
+END
+
+IF ~~ THEN BEGIN 28
+  SAY @3873 /* Excuse me! It is EXTREMELY rude to interrupt in the middle of a performance. Most rude indeed. Friends, why don’t you reveal yourselves already? Let us put an end to this masquerade. */
+  IF ~~ THEN DO ~
+    SetGlobal("OHB_BP2_CAPTURE","GLOBAL",3)
+    StartCutSceneMode()
+    StartCutScene("zbcut02")~ EXIT
+END
+
+IF ~~ THEN BEGIN 29
+  SAY @3874 /* Enough bickering! Lay down your arms and accept capture, and you may come out the other side unharmed. Our employer has a vested interest in your abilities, and so you shall be coming with us. */
+  IF ~~ THEN EXTERN ~OHBNAJIM~ 21
 END

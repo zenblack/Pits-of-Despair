@@ -25,5 +25,9 @@ A messenger delivered a note from Vyatri, an innkeeper in Tradesmeet, who reques
 /* End of 1st Cutscene Infamy */
 @25 = ~Your head spins suddenly...~
 
+// zbcut02
+@50 = ~What the hells?!~
+@51 = ~Run for it!~
+
 @100 = ~Why are these idiots fighting? *sigh*~
 @101 = ~Now just let me fit your ring in this … well maybe this way? Ah, that's it. Ala-khazoom. Hold on everyone!~
